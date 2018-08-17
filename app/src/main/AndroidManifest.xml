@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="edu.uci.seal.attacker">
+
+    <uses-sdk android:minSdkVersion="14"
+        android:targetSdkVersion="17"/>
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/hacker"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".AttackerMain">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,7 +22,8 @@
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="UPDATE_LOCATION"/>
+                <action android:name="edu.uci.seal.action.UPDATE_LOCATION"/>
+                <action android:name="edu.uci.seal.action.SEND_SMS"/>
             </intent-filter>
         </service>
     </application>

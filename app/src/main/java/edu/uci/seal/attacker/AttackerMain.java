@@ -9,7 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class AttackerMain extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,11 +24,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        //DOS attack
-        Intent intent = new Intent();
-        intent.setAction("edu.uci.seal.action.SEND_SMS");
-        //no extra data provided which causes the service to throw a NullPointerException
-        startService(intent);
+//        //DOS attack
+//        Intent intent = new Intent();
+//        intent.setAction("edu.uci.seal.action.SEND_SMS");
+//        //no extra data provided which causes the service to throw a NullPointerException
+//        startService(intent);
 
     }
 
